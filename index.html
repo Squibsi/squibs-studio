@@ -1,15 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="img/logo-bright.svg">
-  <title>Squibs Studio</title>
-</head>
-<body>
-  
 
-  <script src="/js/app.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Squibs Studio, a multimedia designer based in Aarhus, Denmark.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="img/logo-bright.svg">
+  <title>Squibs Studio</title>
+
+  <!-- Prevents the wrong theme flashing while the page loads -->
+  <script>
+    try {
+      const darkMode =
+        localStorage.getItem("squibs-dark-mode") === "true";
+
+      document.documentElement.dataset.theme =
+        darkMode ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Squibs Studio home">
+      <img
+        class="brand__logo brand__logo--dark"
+        src="img/logo-dark.svg"
+        alt=""
+      >
+
+      <img
+        class="brand__logo brand__logo--bright"
+        src="img/logo-bright.svg"
+        alt=""
+      >
+
+      <span class="brand__name">Squibs Studio</span>
+    </a>
+
+    <button
+      class="menu-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+    >
+      <span class="menu-trigger__label">Menu</span>
+      <span class="menu-trigger__icon" aria-hidden="true"></span>
+    </button>
+
+    <!-- This same navigation is used on desktop and mobile -->
+    <nav
+      class="primary-navigation"
+      id="primary-navigation"
+      aria-label="Primary navigation"
+    >
+      <ol class="navigation-list">
+        <li>
+          <a href="#work">
+            <small aria-hidden="true">01</small>
+            <span>Work</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            <small aria-hidden="true">02</small>
+            <span>About</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            <small aria-hidden="true">03</small>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ol>
+
+      <details class="settings">
+        <summary>Settings</summary>
+
+        <section
+          class="settings-panel"
+          aria-labelledby="appearance-title"
+        >
+          <h2
+            class="settings-panel__title"
+            id="appearance-title"
+          >
+            Appearance
+          </h2>
+
+          <label class="theme-switch">
+            <span class="theme-switch__text">
+              Dark mode off
+            </span>
+
+            <input
+              class="theme-switch__input"
+              type="checkbox"
+              role="switch"
+              aria-label="Turn on dark mode"
+            >
+
+            <span
+              class="theme-switch__track"
+              aria-hidden="true"
+            >
+              <span class="theme-switch__thumb">
+                <span class="theme-switch__sun">☀</span>
+                <span class="theme-switch__moon">☾</span>
+              </span>
+            </span>
+          </label>
+        </section>
+      </details>
+
+      <address class="navigation-information">
+        Aarhus, Denmark<br>
+        Available for apprenticeship
+      </address>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <h1>
+        Made to be seen.<br>
+        Designed to be <em> felt.</em>
+      </h1>
+
+      <footer class="hero-footer">
+        <a href="#work">
+          Explore selected work
+          <span aria-hidden="true">↘</span>
+        </a>
+      </footer>
+    </section>
+
+    <section class="content-section" id="work">
+      <p class="section-number">01</p>
+      <h2>Selected work</h2>
+    </section>
+
+    <section class="content-section" id="about">
+      <p class="section-number">02</p>
+      <h2>About</h2>
+    </section>
+
+    <section class="content-section" id="contact">
+      <p class="section-number">03</p>
+      <h2>Contact</h2>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

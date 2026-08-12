@@ -548,8 +548,10 @@ html[data-theme="dark"] .brand__logo--bright {
   grid-column: 1;
   grid-row: 2;
 
-  align-self: center;
+  align-self: start;
   justify-self: start;
+
+  margin-top: 100px;
 }
 
 .project-links {
@@ -559,27 +561,83 @@ html[data-theme="dark"] .brand__logo--bright {
 
   max-width: 430px;
   margin: 0;
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
 
-  color: var(--foreground);
+  color: var(--muted);
   font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.5;
 }
 
-.project-links li::marker {
-  color: var(--foreground);
-  font-size: 0.75em;
-}
-
-.project-links a {
+.project-item summary {
   position: relative;
+  padding-left: 24px;
+
+  color: var(--foreground);
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-item summary::before {
+  content: "▸";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: rotate(0deg);
+  transform-origin: center;
+
+  transition: transform 300ms var(--ease);
+}
+
+.project-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.project-item[open] summary span::after {
+  right: 0;
+}
+
+.project-item__content {
+  padding: 14px 0 8px 24px;
+}
+
+.project-item__content p {
+  margin: 0 0 14px;
+
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.65;
+}
+
+.project-item__content a {
   display: inline-block;
   padding-bottom: 3px;
 
-  transition: color 250ms var(--ease);
+  border-bottom: 1px solid currentColor;
+  color: var(--foreground);
+
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.project-links a::after {
+.project-item__content a span {
+  margin-left: 8px;
+}
+
+.project-item summary span {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+
+.project-item summary span::after {
   content: "";
 
   position: absolute;
@@ -593,13 +651,8 @@ html[data-theme="dark"] .brand__logo--bright {
   transition: right 350ms var(--ease);
 }
 
-.project-links a:hover,
-.project-links a:focus-visible {
-  color: var(--muted);
-}
-
-.project-links a:hover::after,
-.project-links a:focus-visible::after {
+.project-item summary:hover span::after,
+.project-item summary:focus-visible span::after {
   right: 0;
 }
 
@@ -873,6 +926,16 @@ html[data-theme="dark"] .brand__logo--bright {
     margin: 0;
     transform: none;
   }
+  
+  #work .project-links {
+  grid-column: 1;
+  grid-row: 3;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  }
+
 }
 
 

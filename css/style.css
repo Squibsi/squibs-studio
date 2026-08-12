@@ -204,11 +204,6 @@ html[data-theme="dark"] .brand__logo--bright {
   right: 0;
 }
 
-.navigation-list small {
-  display: none;
-}
-
-
 /* ---------------------------------
    Settings
 --------------------------------- */
@@ -496,11 +491,136 @@ html[data-theme="dark"] .brand__logo--bright {
   aspect-ratio: 4 / 5;
 }
 
-/* Work and Contact */
+/* Project and Contact */
 
-.section-image--square {
+.section-image--project {
+  width: min(100%, 520px);
+  margin: 48px 0 0 auto;
+  aspect-ratio: 1;
+}
+
+.section-image--contact {
   width: min(100%, 520px);
   aspect-ratio: 1;
+}
+
+/* Split content sections */
+
+.content-section--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: clamp(50px, 8vw, 140px);
+  row-gap: 48px;
+}
+
+/* Keep heading in its original position */
+
+.content-section--split h2 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* About: image left, text right */
+
+#about .section-image {
+  grid-column: 1;
+  grid-row: 2;
+
+  width: min(75%, 420px);
+  margin: 0;
+  justify-self: start;
+}
+
+#about .section-copy {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: start;
+  transform: translateX(-200px);
+}
+
+/* Projects: text left, image right */
+
+#work .project-links {
+  grid-column: 1;
+  grid-row: 2;
+
+  align-self: center;
+  justify-self: start;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  max-width: 430px;
+  margin: 0;
+  padding-left: 20px;
+
+  color: var(--foreground);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.5;
+}
+
+.project-links li::marker {
+  color: var(--foreground);
+  font-size: 0.75em;
+}
+
+.project-links a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+
+  transition: color 250ms var(--ease);
+}
+
+.project-links a::after {
+  content: "";
+
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+  background: currentColor;
+
+  transition: right 350ms var(--ease);
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+  color: var(--muted);
+}
+
+.project-links a:hover::after,
+.project-links a:focus-visible::after {
+  right: 0;
+}
+
+#work .section-image {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: min(100%, 520px);
+  margin: 0;
+  justify-self: end;
+}
+
+/* Section text */
+
+.section-copy {
+  max-width: 830px;
+  margin: 0;
+
+  color: var(--foreground);
+  font-size: clamp(17px, 1.5vw, 24px);
+  line-height: 1.7;
 }
 
 
@@ -524,8 +644,8 @@ html[data-theme="dark"] .brand__logo--bright {
   }
 
   .brand__logo {
-    width: 26px;
-    height: 26px;
+    width: 45px;
+    height: 45px;
   }
 
   .menu-trigger {
@@ -619,7 +739,7 @@ html[data-theme="dark"] .brand__logo--bright {
 
   .navigation-list a {
     align-items: flex-start;
-    gap: 17px;
+    gap: 0;
     padding: 6px 0;
 
     font-family: Georgia, "Times New Roman", serif;
@@ -630,17 +750,6 @@ html[data-theme="dark"] .brand__logo--bright {
 
   .navigation-list a::after {
     display: none;
-  }
-
-  .navigation-list small {
-    display: block;
-    padding-top: 8px;
-
-    color: var(--muted);
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 8px;
-    letter-spacing: 0;
   }
 
   .settings {
@@ -723,20 +832,46 @@ html[data-theme="dark"] .brand__logo--bright {
     flex-direction: column;
   }
 
-  .hero-footer p {
-    max-width: 290px;
-  }
-
   .section-image {
     margin-top: 34px;
   }
 
-  .section-image--portrait {
-    width: 78%;
+  .section-image--portrait,
+  .section-image--project,
+  .section-image--contact {
+    width: 100%;
+    margin: 34px 0 0;
   }
 
-  .section-image--square {
+  .content-section--split {
+    grid-template-columns: 1fr;
+    row-gap: 34px;
+  }
+
+  .content-section--split h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #about .section-image,
+  #work .section-image {
+    grid-column: 1;
+    grid-row: 2;
+
     width: 100%;
+    margin: 0;
+    justify-self: stretch;
+  }
+
+  #about .section-copy,
+  #work .section-copy {
+    grid-column: 1;
+    grid-row: 3;
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    transform: none;
   }
 }
 

@@ -184,7 +184,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-
 /* ---------------------------------
    Initial state
 --------------------------------- */

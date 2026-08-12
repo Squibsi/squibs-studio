@@ -106,6 +106,17 @@ input:focus-visible + .theme-switch__track {
 
   min-height: var(--header-height);
   padding: 20px var(--page-padding);
+
+  transform: translateY(0);
+
+  transition:
+    transform 400ms var(--ease),
+    background-color 450ms var(--ease),
+    color 450ms var(--ease);
+}
+
+.site-header[data-hidden="true"] {
+  transform: translateY(-100%);
 }
 
 
@@ -459,18 +470,37 @@ html[data-theme="dark"] .brand__logo--bright {
   scroll-margin-top: var(--header-height);
 }
 
-.section-number {
-  margin: 0;
-  color: var(--muted);
-  font-size: 10px;
-}
-
 .content-section h2 {
   margin: 30px 0 0;
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(50px, 8vw, 120px);
   font-weight: 400;
+}
+
+
+/* ---------------------------------
+   content section images
+--------------------------------- */
+.section-image {
+  display: block;
+  margin: 48px 0 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* About portrait */
+
+.section-image--portrait {
+  width: min(75%, 420px);
+  aspect-ratio: 4 / 5;
+}
+
+/* Work and Contact */
+
+.section-image--square {
+  width: min(100%, 520px);
+  aspect-ratio: 1;
 }
 
 
@@ -696,7 +726,21 @@ html[data-theme="dark"] .brand__logo--bright {
   .hero-footer p {
     max-width: 290px;
   }
+
+  .section-image {
+    margin-top: 34px;
+  }
+
+  .section-image--portrait {
+    width: 78%;
+  }
+
+  .section-image--square {
+    width: 100%;
+  }
 }
+
+
 
 
 /* ---------------------------------
@@ -714,4 +758,6 @@ html[data-theme="dark"] .brand__logo--bright {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+  
+
 }

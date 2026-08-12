@@ -6,6 +6,11 @@ const menuLabel = document.querySelector(".menu-trigger__label");
 const navigation = document.querySelector(".primary-navigation");
 const navigationLinks = navigation.querySelectorAll("a");
 const settings = document.querySelector(".settings");
+const siteHeader = document.querySelector(".site-header");
+const hero = document.querySelector(".hero");
+
+let previousScrollPosition = window.scrollY;
+let scrollTicking = false;
 
 const themeSwitch = document.querySelector(
   ".theme-switch__input"
@@ -76,6 +81,7 @@ function openMenu() {
   menuTrigger.setAttribute("aria-expanded", "true");
   menuLabel.textContent = "Close";
 
+  siteHeader.dataset.hidden = "false";
   body.classList.add("menu-is-open");
 }
 
@@ -105,6 +111,45 @@ menuTrigger.addEventListener("click", toggleMenu);
 navigationLinks.forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
+
+/* ---------------------------------
+   Header visibility while scrolling
+--------------------------------- */
+
+function updateHeaderVisibility() {
+  const currentScrollPosition = window.scrollY;
+  const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+  const isInsideHero =
+    currentScrollPosition < heroBottom;
+
+  const isScrollingUp =
+    currentScrollPosition < previousScrollPosition;
+
+  const isMenuOpen =
+    menuTrigger.getAttribute("aria-expanded") === "true";
+
+  const shouldShowHeader =
+    isInsideHero ||
+    isScrollingUp ||
+    isMenuOpen;
+
+  siteHeader.dataset.hidden = String(!shouldShowHeader);
+
+  previousScrollPosition = currentScrollPosition;
+  scrollTicking = false;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateHeaderVisibility);
+      scrollTicking = true;
+    }
+  },
+  { passive: true }
+);
 
 
 /* ---------------------------------

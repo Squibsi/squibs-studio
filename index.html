@@ -147,21 +147,56 @@
           alt="Portrait of me">
 
         <p class="section-copy">
-          Hello! my name is Anton, I'm a multimedia designer based in Aarhus, Denmark. I'm
-          currently studying at EAAA - Erhvervsakademiet Aarhus, where I'm studying to become
-          a professional designer. I'm incredibly passionate about creating visually pleasing 
-          intuitive design, that draws the user in and leaves them with an impression.
+            Hello! My name is Anton, and I’m a multimedia designer based in
+            Aarhus, Denmark. I’m currently studying multimedia design at EAAA -
+            Erhvervsakademi Aarhus. I'm eager to learn and grow as a designer, and
+            I’m passionate about creating visually
+            compelling, intuitive designs that draw people in and leave a
+            lasting impression.
         </p>
     </section> 
 
     <section class="content-section content-section--split" id="work">
       <h2>Projects</h2>
 
-      <img
-        class="section-image section-image--project"
-        src="img/placeholder-cat2.jpg"
-        alt="image of a project i have worked on in the past"
+      <figure
+        class="project-carousel"
+        aria-label="Project logo carousel"
       >
+        <ul class="project-carousel__slides">
+          <li class="project-carousel__slide" data-active="true">
+            <img
+              class="project-carousel__logo project-carousel__logo--dark"
+              src="img/lumina-dark.svg"
+              alt="Lumina One logo"
+            >
+
+            <img
+              class="project-carousel__logo project-carousel__logo--bright"
+              src="img/lumina-bright.svg"
+              alt=""
+            >
+          </li>
+
+          <li class="project-carousel__slide" data-active="false">
+            <img
+              src="img/bbu-logo.png"
+              alt="Børnenes Bogunivers logo"
+            >
+          </li>
+
+          <li class="project-carousel__slide" data-active="false">
+            <img
+              src="img/ovartaci-logo.png"
+              alt="Ovartaci Museum project logo"
+            >
+          </li>
+        </ul>
+
+        <figcaption class="project-carousel__status" aria-live="polite">
+          Project 1 of 3
+        </figcaption>
+      </figure>
       <ul class="project-links">
           <li>
             <details class="project-item">
@@ -195,7 +230,7 @@
               </summary>
                 <section class="project-item__content">
                   <p>
-                    this project for my second semester exam i had to develop a website for a fictional company,
+                    This project for my second semester exam i had to develop a website for a fictional company,
                     this time the company was called "Børnenes bogunivers" or "Childrens book universe" in english.
                     The purpose of the company was to create a website where children would get drawn in and potentially find a book
                     they would want to read, while keeping the website intuitive and easy to navigate for both children and adults.
@@ -221,7 +256,12 @@
               </summary>
                 <section class="project-item__content">
                   <p>
-
+                    The Ovartaci project was made for a real client, the Ovartaci Muséum
+                    in Aarhus, Denmark. it was still part of my second semester exam. The task was to
+                    create an interactive experience the museum visitors could engage in while visiting the museum.
+                    My group took an angle that lets you dive into the mind of the artist/patient Ovartaci and lead you on a
+                    treasure hunt through the museum to gather his mind, considering he was a patient at the psychiatric hospital
+                    in Aarhus, and wasn't shy about it either, which you can easily see through his art and writings.
                   </p>
 
                   <a
@@ -249,7 +289,7 @@
 
     </section>
   </main>
-
+   <p class="copyright">&copy; Anton Reedtz Nesgaard. 2026 all rights reserved.</p> 
   <script src="js/app.js"></script>
 </body>
 </html>

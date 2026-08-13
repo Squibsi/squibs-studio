@@ -8,6 +8,7 @@ const navigationLinks = navigation.querySelectorAll("a");
 const settings = document.querySelector(".settings");
 const siteHeader = document.querySelector(".site-header");
 const hero = document.querySelector(".hero");
+const carousel = document.querySelector(".project-carousel");
 
 let previousScrollPosition = window.scrollY;
 let scrollTicking = false;
@@ -20,6 +21,13 @@ const themeText = document.querySelector(
   ".theme-switch__text"
 );
 
+const carouselSlides = document.querySelectorAll(
+  ".project-carousel__slide"
+);
+
+const carouselStatus = document.querySelector(
+  ".project-carousel__status"
+);
 
 /* ---------------------------------
    Dark mode
@@ -167,6 +175,7 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 720) {
     closeMenu();
   }
+  updateHeaderVisibility();
 });
 
 
@@ -183,6 +192,47 @@ document.addEventListener("click", (event) => {
     settings.removeAttribute("open");
   }
 });
+
+/* ---------------------------------
+   Project carousel
+--------------------------------- */
+
+let activeSlideIndex = 0;
+let carouselTimer;
+
+function showCarouselSlide(index) {
+  carouselSlides.forEach((slide, slideIndex) => {
+    slide.dataset.active = String(slideIndex === index);
+  });
+
+  carouselStatus.textContent =
+    `Project ${index + 1} of ${carouselSlides.length}`;
+}
+
+function showNextCarouselSlide() {
+  activeSlideIndex =
+    (activeSlideIndex + 1) % carouselSlides.length;
+
+  showCarouselSlide(activeSlideIndex);
+}
+
+function startCarousel() {
+  if (
+    !carousel ||
+    carouselSlides.length < 2 ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  carouselTimer = window.setInterval(
+    showNextCarouselSlide,
+    4000
+  );
+}
+
+showCarouselSlide(activeSlideIndex);
+startCarousel();
 
 /* ---------------------------------
    Initial state

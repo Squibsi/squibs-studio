@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio of Squibs Studio, a multimedia designer based in Aarhus, Denmark.">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="img/logo-bright.svg">
   <title>Squibs Studio</title>
@@ -147,7 +152,7 @@
           alt="Portrait of me">
 
         <p class="section-copy">
-            Hello! My name is Anton, and I’m a multimedia designer based in
+            Hello! My name is Anton, I’m a multimedia designer currently based in
             Aarhus, Denmark. I’m currently studying multimedia design at EAAA -
             Erhvervsakademi Aarhus. I'm eager to learn and grow as a designer, and
             I’m passionate about creating visually
@@ -166,13 +171,13 @@
         <ul class="project-carousel__slides">
           <li class="project-carousel__slide" data-active="true">
             <img
-              class="project-carousel__logo project-carousel__logo--dark"
+              class="project-carousel__logo--dark"
               src="img/lumina-dark.svg"
               alt="Lumina One logo"
             >
 
             <img
-              class="project-carousel__logo project-carousel__logo--bright"
+              class="project-carousel__logo--bright"
               src="img/lumina-bright.svg"
               alt=""
             >
@@ -206,10 +211,11 @@
                 <section class="project-item__content">
                   <p>
                     My first semester exam project, where I was tasked with creating a website for a fictional company.
-                    The companies name is Lumina and their main product was to create a small handy but stylish
-                    bluetooth speaker. My plan was to create a website that was simple and intuitive, but also relatable to a
+                    The company's name is Lumina and their main product was to create a small handy but stylish
+                    Bluetooth speaker. My plan was to create a website that was simple and intuitive, but also relatable to a
                     younger audience, while styling it in a luxurious yet relaxed way.
                   </p>
+                  <p>HTML, CSS, JS</p>
 
                   <a
                     href="https://squibsi.github.io/Projekt-1-Eksamen-Anton/"
@@ -226,23 +232,24 @@
           <li>
             <details class="project-item">
               <summary>
-                <span>Børnenes bogunivers / Childrens book universe</span>
+                <span>Børnenes bogunivers / Children's book universe</span>
               </summary>
                 <section class="project-item__content">
                   <p>
-                    This project for my second semester exam i had to develop a website for a fictional company,
-                    this time the company was called "Børnenes bogunivers" or "Childrens book universe" in english.
+                    This project for my second semester exam I had to develop a website for a fictional company,
+                    this time the company was called "Børnenes bogunivers" or "Childrens book universe" in English.
                     The purpose of the company was to create a website where children would get drawn in and potentially find a book
                     they would want to read, while keeping the website intuitive and easy to navigate for both children and adults.
                     Other than that it should also be possible to donate your old books to the company, so they could be resold and given a new home.
                   </p>
+                  <p>WORDPRESS</p>
 
                   <a
                     href="https://bbu.squibsstudio.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Visit Børnenes bogunivers / Childrens book universe
+                    Visit Børnenes bogunivers | Children's book universe
                     <span aria-hidden="true">↗</span>
                   </a>
               </section>
@@ -257,12 +264,13 @@
                 <section class="project-item__content">
                   <p>
                     The Ovartaci project was made for a real client, the Ovartaci Muséum
-                    in Aarhus, Denmark. it was still part of my second semester exam. The task was to
+                    in Aarhus, Denmark. It was still part of my second semester exam. The task was to
                     create an interactive experience the museum visitors could engage in while visiting the museum.
                     My group took an angle that lets you dive into the mind of the artist/patient Ovartaci and lead you on a
                     treasure hunt through the museum to gather his mind, considering he was a patient at the psychiatric hospital
                     in Aarhus, and wasn't shy about it either, which you can easily see through his art and writings.
                   </p>
+                  <p>HTML, CSS, JS</p>
 
                   <a
                     href="https://squibsi.github.io/ovartaciMuseum/"
@@ -279,17 +287,88 @@
     </section>
     
 
-    <section class="content-section" id="contact">
+    <section
+      class="content-section"
+      id="contact"
+    >
       <h2>Contact</h2>
-      <img
-        class="section-image section-image--contact"
-        src="img/placeholder-cat3.jpg.png"
-        alt="image of a contact form"
-      >
 
+      <p class="contact-introduction">
+        I’d love to hear from you on any of these platforms.
+      </p>
+
+      <ul class="contact-links">
+        <li>
+          <a href="mailto:Squibsstudio@outlook.com"
+             aria-label="Email Squibs Studio" 
+          >
+            <img
+              class="contact-icon"
+              src="img/email-icon.png"
+              alt=""
+            >
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/in/anton-nesgaard-667b89429/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Squibs Studio on LinkedIn"
+          >
+            <img
+              class="contact-icon"
+              src="img/li-icon.png"
+              alt=""
+            >
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://github.com/Squibsi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Squibs Studio on GitHub"
+          >
+            <img
+              class="contact-icon contact-icon--github-dark"
+              src="img/github-icon-dark.svg"
+              alt=""
+            >
+
+            <img
+              class="contact-icon contact-icon--github-bright"
+              src="img/github-icon-bright.svg"
+              alt=""
+            >
+          </a>
+        </li>
+      </ul>
+
+      <aside aria-label="availability">
+        <p>
+          <span>Availability: </span>
+          <span class="availability-status">
+            <span class="availability-status__dot" aria-hidden="true"></span>
+            Open to apprenticeship opportunities
+          </span>
+        </p>
+      </aside>
     </section>
   </main>
-   <p class="copyright">&copy; Anton Reedtz Nesgaard. 2026 all rights reserved.</p> 
+  <footer class="site-footer">
+    <p class="site-footer__message">
+      Looking forward<br>
+      to hearing from <em>you.</em>
+    </p>
+
+    <p class="copyright">
+      &copy; Anton Reedtz Nesgaard. 2026. All rights reserved.
+    </p>
+  </footer>
+
   <script src="js/app.js"></script>
 </body>
 </html>

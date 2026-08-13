@@ -126,10 +126,11 @@ navigationLinks.forEach((link) => {
 
 function updateHeaderVisibility() {
   const currentScrollPosition = window.scrollY;
-  const heroBottom = hero.offsetTop + hero.offsetHeight;
+  const heroHidePoint =
+    hero.offsetTop + hero.offsetHeight * 0.8;
 
   const isInsideHero =
-    currentScrollPosition < heroBottom;
+    currentScrollPosition < heroHidePoint;
 
   const isScrollingUp =
     currentScrollPosition < previousScrollPosition;
@@ -233,6 +234,56 @@ function startCarousel() {
 
 showCarouselSlide(activeSlideIndex);
 startCarousel();
+
+/* ---------------------------------
+   Scroll reveals
+--------------------------------- */
+
+const revealElements = document.querySelectorAll(
+  [
+    ".content-section h2",
+    ".section-image",
+    ".section-copy",
+    ".project-carousel",
+    ".project-links",
+    ".contact-introduction",
+    ".contact-links",
+    "#contact aside"
+  ].join(",")
+);
+
+function revealElement(element) {
+  element.dataset.visible = "true";
+}
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        revealElement(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -8% 0px"
+    }
+  );
+
+  revealElements.forEach((element) => {
+    element.classList.add("scroll-reveal");
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach((element) => {
+    element.classList.add("scroll-reveal");
+    revealElement(element);
+  });
+}
 
 /* ---------------------------------
    Initial state

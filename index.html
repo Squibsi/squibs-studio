@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Squibs Studio, a multimedia designer based in Aarhus, Denmark.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <meta
+    name="description"
+    content="Portfolio of Squibs Studio, a multimedia designer based in Aarhus, Denmark."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="img/logo-bright.svg">
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="img/logo-bright.svg"
+  >
+
   <title>Squibs Studio</title>
 
   <!-- Prevents the wrong theme flashing while the page loads -->
@@ -31,7 +55,11 @@
 
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Squibs Studio home">
+    <a
+      class="brand"
+      href="#top"
+      aria-label="Squibs Studio home"
+    >
       <img
         class="brand__logo brand__logo--dark"
         src="img/logo-dark.svg"
@@ -44,7 +72,9 @@
         alt=""
       >
 
-      <span class="brand__name">Squibs Studio</span>
+      <span class="brand__name">
+        Squibs Studio
+      </span>
     </a>
 
     <button
@@ -53,11 +83,16 @@
       aria-expanded="false"
       aria-controls="primary-navigation"
     >
-      <span class="menu-trigger__label">Menu</span>
-      <span class="menu-trigger__icon" aria-hidden="true"></span>
+      <span class="menu-trigger__label">
+        Menu
+      </span>
+
+      <span
+        class="menu-trigger__icon"
+        aria-hidden="true"
+      ></span>
     </button>
 
-    <!-- This same navigation is used on desktop and mobile -->
     <nav
       class="primary-navigation"
       id="primary-navigation"
@@ -114,8 +149,13 @@
               aria-hidden="true"
             >
               <span class="theme-switch__thumb">
-                <span class="theme-switch__sun">☀</span>
-                <span class="theme-switch__moon">☾</span>
+                <span class="theme-switch__sun">
+                  ☀
+                </span>
+
+                <span class="theme-switch__moon">
+                  ☾
+                </span>
               </span>
             </span>
           </label>
@@ -144,24 +184,175 @@
       </footer>
     </section>
 
-    <section class="content-section content-section--split" id="about">
+    <section
+      class="content-section content-section--split"
+      id="about"
+    >
       <h2>Meet Squibs</h2>
-        <img
-          class="section-image section-image--portrait"
-          src="img/placeholder-cat.jpg"
-          alt="Portrait of me">
 
-        <p class="section-copy">
-            Hello! My name is Anton, I’m a multimedia designer currently based in
-            Aarhus, Denmark. I’m currently studying multimedia design at EAAA -
-            Erhvervsakademi Aarhus. I'm eager to learn and grow as a designer, and
-            I’m passionate about creating visually
-            compelling, intuitive designs that draw people in and leave a
-            lasting impression.
-        </p>
-    </section> 
+      <img
+        class="section-image section-image--portrait"
+        src="img/placeholder-cat.jpg"
+        alt="Portrait of me"
+      >
 
-    <section class="content-section content-section--split" id="work">
+      <p class="section-copy">
+        Hello! My name is Anton, I’m a multimedia designer
+        currently based in Aarhus, Denmark. I’m currently
+        studying multimedia design at EAAA – Erhvervsakademi
+        Aarhus. I’m eager to learn and grow as a designer,
+        and I’m passionate about creating visually compelling,
+        intuitive designs that draw people in and leave a
+        lasting impression.
+      </p>
+    </section>
+
+    <section
+      class="tools-section"
+      aria-labelledby="tools-wheel-title"
+    >
+      <figure
+        class="tools-wheel"
+        aria-labelledby="tools-wheel-title"
+      >
+        <figcaption
+          class="tools-wheel__title"
+          id="tools-wheel-title"
+        >
+          My <br> favourite tools.
+        </figcaption>
+
+        <ul class="tools-wheel__orbit">
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="Figma"
+              data-tool-description="Figma is a collaborative interface-design tool. I use it for wireframes, visual design, interactive prototypes, design systems, and preparing concepts before development."
+              aria-label="Read about Figma"
+              aria-controls="tools-information"
+            >
+              <img
+                class="tools-wheel__icon--figma"
+                src="img/figma-icon.svg"
+                alt=""
+              >
+            </button>
+          </li>
+
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="Adobe Photoshop"
+              data-tool-description="Adobe Photoshop is a raster graphics editor. I use it for image editing, retouching, and creating digital artwork."
+              aria-label="Read about Adobe Photoshop"
+              aria-controls="tools-information"
+            >
+              <img
+                src="img/adobe-photoshop-icon.svg"
+                alt=""
+              >
+            </button>
+          </li>
+
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="Adobe Illustrator"
+              data-tool-description="Adobe Illustrator is a vector graphics editor. I use it for creating logos, illustrations, and other scalable graphics."
+              aria-label="Read about Adobe Illustrator"
+              aria-controls="tools-information"
+            >
+              <img
+                src="img/adobe-illustrator-icon.svg"
+                alt=""
+              >
+            </button>
+          </li>
+
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="Visual Studio Code"
+              data-tool-description="Visual Studio Code is a source-code editor developed by Microsoft. I use it for coding, debugging, and version control."
+              aria-label="Read about Visual Studio Code"
+              aria-controls="tools-information"
+            >
+              <img
+                src="img/vscode-icon.svg"
+                alt=""
+              >
+            </button>
+          </li>
+
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="WordPress"
+              data-tool-description="WordPress is a content management system. I use it for building and maintaining websites."
+              aria-label="Read about WordPress"
+              aria-controls="tools-information"
+            >
+              <img
+                class="tools-wheel__icon tools-wheel__icon--dark tools-wheel__icon--wp"
+                src="img/wordpress-icon-dark.png"
+                alt=""
+              >
+
+              <img
+                class="tools-wheel__icon tools-wheel__icon--bright tools-wheel__icon--wp"
+                src="img/wordpress-icon-bright.png"
+                alt=""
+              >
+            </button>
+          </li>
+
+          <li class="tools-wheel__item">
+            <button
+              class="tools-wheel__button"
+              type="button"
+              data-tool-title="GitHub"
+              data-tool-description="GitHub is a web-based platform for version control and collaboration. I use it for hosting my code repositories and collaborating with others."
+              aria-label="Read about GitHub"
+              aria-controls="tools-information"
+            >
+              <img
+                class="tools-wheel__icon tools-wheel__icon--dark"
+                src="img/github-icon-dark.svg"
+                alt=""
+              >
+
+              <img
+                class="tools-wheel__icon tools-wheel__icon--bright"
+                src="img/github-icon-bright.svg"
+                alt=""
+              >
+            </button>
+          </li>
+        </ul>
+      </figure>
+
+      <aside
+        class="tools-information"
+        id="tools-information"
+        aria-live="polite"
+        aria-atomic="true"
+        data-open="false"
+      >
+        <h3 class="tools-information__title"></h3>
+
+        <p class="tools-information__description"></p>
+      </aside>
+    </section>
+
+    <section
+      class="content-section content-section--split"
+      id="work"
+    >
       <h2>Projects</h2>
 
       <figure
@@ -169,7 +360,10 @@
         aria-label="Project logo carousel"
       >
         <ul class="project-carousel__slides">
-          <li class="project-carousel__slide" data-active="true">
+          <li
+            class="project-carousel__slide"
+            data-active="true"
+          >
             <img
               class="project-carousel__logo--dark"
               src="img/lumina-dark.svg"
@@ -183,14 +377,20 @@
             >
           </li>
 
-          <li class="project-carousel__slide" data-active="false">
+          <li
+            class="project-carousel__slide"
+            data-active="false"
+          >
             <img
               src="img/bbu-logo.png"
               alt="Børnenes Bogunivers logo"
             >
           </li>
 
-          <li class="project-carousel__slide" data-active="false">
+          <li
+            class="project-carousel__slide"
+            data-active="false"
+          >
             <img
               src="img/ovartaci-logo.png"
               alt="Ovartaci Museum project logo"
@@ -198,94 +398,119 @@
           </li>
         </ul>
 
-        <figcaption class="project-carousel__status" aria-live="polite">
+        <figcaption
+          class="project-carousel__status"
+          aria-live="polite"
+        >
           Project 1 of 3
         </figcaption>
       </figure>
+
       <ul class="project-links">
-          <li>
-            <details class="project-item">
-              <summary>
-                <span>Lumina One</span>
-              </summary>
-                <section class="project-item__content">
-                  <p>
-                    My first semester exam project, where I was tasked with creating a website for a fictional company.
-                    The company's name is Lumina and their main product was to create a small handy but stylish
-                    Bluetooth speaker. My plan was to create a website that was simple and intuitive, but also relatable to a
-                    younger audience, while styling it in a luxurious yet relaxed way.
-                  </p>
-                  <p>HTML, CSS, JS</p>
+        <li>
+          <details class="project-item">
+            <summary>
+              <span>Lumina One</span>
+            </summary>
 
-                  <a
-                    href="https://squibsi.github.io/Projekt-1-Eksamen-Anton/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Lumina One
-                    <span aria-hidden="true">↗</span>
-                  </a>
-              </section>
-            </details>
-          </li>
+            <section class="project-item__content">
+              <p>
+                My first semester exam project, where I was
+                tasked with creating a website for a fictional
+                company. The company’s name is Lumina, and its
+                main product was a small, handy but stylish
+                Bluetooth speaker. My plan was to create a
+                website that was simple and intuitive, but also
+                relatable to a younger audience, while styling
+                it in a luxurious yet relaxed way.
+              </p>
 
-          <li>
-            <details class="project-item">
-              <summary>
-                <span>Børnenes bogunivers / Children's book universe</span>
-              </summary>
-                <section class="project-item__content">
-                  <p>
-                    This project for my second semester exam I had to develop a website for a fictional company,
-                    this time the company was called "Børnenes bogunivers" or "Childrens book universe" in English.
-                    The purpose of the company was to create a website where children would get drawn in and potentially find a book
-                    they would want to read, while keeping the website intuitive and easy to navigate for both children and adults.
-                    Other than that it should also be possible to donate your old books to the company, so they could be resold and given a new home.
-                  </p>
-                  <p>WORDPRESS</p>
+              <p>HTML, CSS, JS</p>
 
-                  <a
-                    href="https://bbu.squibsstudio.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Børnenes bogunivers | Children's book universe
-                    <span aria-hidden="true">↗</span>
-                  </a>
-              </section>
-            </details>
-          </li>
+              <a
+                href="https://squibsi.github.io/Projekt-1-Eksamen-Anton/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Lumina One
+                <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </details>
+        </li>
 
-          <li>
-            <details class="project-item">
-              <summary>
-                <span>Ovartaci Muséum</span>
-              </summary>
-                <section class="project-item__content">
-                  <p>
-                    The Ovartaci project was made for a real client, the Ovartaci Muséum
-                    in Aarhus, Denmark. It was still part of my second semester exam. The task was to
-                    create an interactive experience the museum visitors could engage in while visiting the museum.
-                    My group took an angle that lets you dive into the mind of the artist/patient Ovartaci and lead you on a
-                    treasure hunt through the museum to gather his mind, considering he was a patient at the psychiatric hospital
-                    in Aarhus, and wasn't shy about it either, which you can easily see through his art and writings.
-                  </p>
-                  <p>HTML, CSS, JS</p>
+        <li>
+          <details class="project-item">
+            <summary>
+              <span>
+                Børnenes Bogunivers | Children’s Book Universe
+              </span>
+            </summary>
 
-                  <a
-                    href="https://squibsi.github.io/ovartaciMuseum/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Ovartaci Muséum
-                    <span aria-hidden="true">↗</span>
-                  </a>
-              </section>
-            </details>
-          </li>
-        </ul>
+            <section class="project-item__content">
+              <p>
+                For this second-semester exam project, I had to
+                develop a website for a fictional company called
+                “Børnenes Bogunivers,” or “Children’s Book
+                Universe” in English. The purpose was to create
+                a website that would draw children in and help
+                them find a book they might want to read, while
+                keeping it intuitive and easy to navigate for
+                both children and adults. Visitors could also
+                donate old books so they could be resold and
+                given a new home.
+              </p>
+
+              <p>WordPress</p>
+
+              <a
+                href="https://bbu.squibsstudio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Børnenes Bogunivers
+                <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </details>
+        </li>
+
+        <li>
+          <details class="project-item">
+            <summary>
+              <span>Ovartaci Museum</span>
+            </summary>
+
+            <section class="project-item__content">
+              <p>
+                The Ovartaci project was created for a real
+                client, the Ovartaci Museum in Aarhus, Denmark,
+                as part of my second-semester exam. The task was
+                to create an interactive experience visitors
+                could engage with while exploring the museum.
+                My group developed an experience that invites
+                visitors into the mind of the artist and patient
+                Ovartaci, leading them on a treasure hunt through
+                the museum to gather fragments of his mind. His
+                experience as a psychiatric patient is visible
+                throughout his art and writing.
+              </p>
+
+              <p>HTML, CSS, JS</p>
+
+              <a
+                href="https://squibsi.github.io/ovartaciMuseum/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Ovartaci Museum
+                <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </details>
+        </li>
+      </ul>
     </section>
-    
 
     <section
       class="content-section"
@@ -293,71 +518,83 @@
     >
       <h2>Contact</h2>
 
-      <p class="contact-introduction">
-        I’d love to hear from you on any of these platforms.
-      </p>
-
-      <ul class="contact-links">
-        <li>
-          <a href="mailto:Squibsstudio@outlook.com"
-             aria-label="Email Squibs Studio" 
-          >
-            <img
-              class="contact-icon"
-              src="img/email-icon.png"
-              alt=""
-            >
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anton-nesgaard-667b89429/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Squibs Studio on LinkedIn"
-          >
-            <img
-              class="contact-icon"
-              src="img/li-icon.png"
-              alt=""
-            >
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="https://github.com/Squibsi"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Squibs Studio on GitHub"
-          >
-            <img
-              class="contact-icon contact-icon--github-dark"
-              src="img/github-icon-dark.svg"
-              alt=""
-            >
-
-            <img
-              class="contact-icon contact-icon--github-bright"
-              src="img/github-icon-bright.svg"
-              alt=""
-            >
-          </a>
-        </li>
-      </ul>
-
-      <aside aria-label="availability">
-        <p>
-          <span>Availability: </span>
-          <span class="availability-status">
-            <span class="availability-status__dot" aria-hidden="true"></span>
-            Open to apprenticeship opportunities
-          </span>
+      <section
+        class="contact-content"
+        aria-label="Contact information"
+      >
+        <p class="contact-introduction">
+          I’d love to hear from you on any of these platforms.
         </p>
-      </aside>
+
+        <ul class="contact-links">
+          <li>
+            <a
+              href="mailto:Squibsstudio@outlook.com"
+              aria-label="Email Squibs Studio"
+            >
+              <img
+                class="contact-icon"
+                src="img/email-icon.png"
+                alt=""
+              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/anton-nesgaard-667b89429/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Squibs Studio on LinkedIn"
+            >
+              <img
+                class="contact-icon"
+                src="img/li-icon.png"
+                alt=""
+              >
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://github.com/Squibsi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Squibs Studio on GitHub"
+            >
+              <img
+                class="contact-icon contact-icon--github-dark"
+                src="img/github-icon-dark.svg"
+                alt=""
+              >
+
+              <img
+                class="contact-icon contact-icon--github-bright"
+                src="img/github-icon-bright.svg"
+                alt=""
+              >
+            </a>
+          </li>
+        </ul>
+
+        <aside aria-label="Availability">
+          <p>
+            <span>Availability:</span>
+
+            <span class="availability-status">
+              <span
+                class="availability-status__dot"
+                aria-hidden="true"
+              ></span>
+
+              Open to apprenticeship opportunities
+            </span>
+          </p>
+        </aside>
+      </section>
     </section>
   </main>
+
   <footer class="site-footer">
     <p class="site-footer__message">
       Looking forward<br>

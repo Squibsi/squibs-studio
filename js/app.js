@@ -708,7 +708,46 @@ if (toolsWheel) {
       });
 
       toolsInformation.dataset.open = "true";
+      toolsInformation.dataset.open = "true";
+      animateToolsInformation();
     });
+
+    function animateToolsInformation() {
+      if (reducedWheelMotion.matches) {
+        return;
+      }
+
+      const informationElements = [
+        toolsInformationTitle,
+        toolsInformationDescription
+      ];
+
+      informationElements.forEach((element, index) => {
+        element.getAnimations().forEach((animation) => {
+          animation.cancel();
+        });
+
+        element.animate(
+          [
+            {
+              opacity: 0,
+              transform: "translateY(16px)"
+            },
+            {
+              opacity: 1,
+              transform: "translateY(0)"
+            }
+          ],
+          {
+            duration: 1750,
+            delay: index * 80,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "both"
+          }
+        );
+      });
+    }
+
   });
 
   toolItems.forEach((item) => {
